@@ -66,6 +66,9 @@ class TensorflowRep(BackendRep):
   def tf_module(self, tf_module):
     self._tf_module = tf_module
 
+  def __call__(self, *args, **kwargs):
+    return self.run(*args, **kwargs)
+
   def run(self, inputs, **kwargs):
     """ Run TensorflowRep.
 
